@@ -1,0 +1,253 @@
+/* Formulario.module.css */
+
+.formContainer {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  margin-top: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  max-width: 900px; /* Ajustado para 900px conforme o containerProdutos */
+  width: 100%;
+  margin: 20px auto; /* Centraliza e adiciona margem superior/inferior */
+  text-align: left;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  /* Animação de entrada */
+  transform: translateY(20px);
+  opacity: 0;
+  animation: fadeInSlideUp 0.3s ease-out forwards;
+  overflow: hidden; /* Garante que o conteúdo não vaze durante a transição de altura */
+}
+
+.formContainer.closing {
+  animation: fadeOutSlideDown 0.3s ease-in forwards;
+}
+
+@keyframes fadeInSlideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutSlideDown {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+}
+
+
+.formHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.formHeader h1 {
+  color: #333;
+  font-size: 1.8em;
+  margin: 0;
+}
+
+.closeIcon {
+  font-size: 2em;
+  color: #ef5350; /* Vermelho suave para o ícone de fechar */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.closeIcon:hover {
+  color: #d32f2f;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Duas colunas */
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup label {
+  margin-bottom: 8px;
+  color: #555;
+  font-weight: 600;
+  font-size: 0.95em;
+  text-align: left;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+select {
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1em;
+  transition: all 0.3s ease;
+  width: 100%;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+select:focus {
+  outline: none;
+  border-color: #8bc34a; /* Verde suave para o foco */
+  box-shadow: 0 0 0 3px rgba(139, 195, 74, 0.1);
+}
+
+/* Estilo para o campo de upload de arquivo */
+.fileInput {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  color: #555;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.fileInput::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.fileInput::before {
+  content: "Selecionar Imagem";
+  display: inline-block;
+  background: linear-gradient(135deg, #8bc34a 0%, #689f38 100%);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  margin-right: 10px;
+  transition: all 0.3s ease;
+}
+
+.fileInput:hover::before {
+  background: linear-gradient(135deg, #689f38 0%, #558b2f 100%);
+  transform: translateY(-1px);
+}
+
+.fileInput:active::before {
+  background: #558b2f;
+}
+
+/* Estilo para o preview da imagem */
+.imagePreviewContainer {
+  margin-top: 15px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9;
+  min-height: 100px;
+  max-height: 200px; /* Limite a altura do container para o preview */
+  overflow: hidden; /* Esconde o que exceder */
+  transition: max-height 0.3s ease-out, padding 0.3s ease-out, border 0.3s ease-out, margin-top 0.3s ease-out;
+}
+
+.imagePreviewContainer:empty {
+  max-height: 0;
+  padding: 0;
+  border: none;
+  margin-top: 0;
+}
+
+.imagePreview {
+  max-width: 100%; /* Ajusta a imagem para caber no container */
+  max-height: 180px; /* Ajusta a altura máxima da imagem */
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.formActions {
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  margin-top: 20px;
+  text-align: right;
+  grid-column: 1 / -1; /* Faz com que o botão ocupe todas as colunas */
+}
+
+.formActions button {
+  width: auto;
+  min-width: 150px;
+  padding: 15px 30px;
+  background: linear-gradient(135deg, #8bc34a 0%, #689f38 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.formActions button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(139, 195, 74, 0.4);
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+  .formContainer {
+    padding: 15px;
+  }
+  .formHeader h1 {
+    font-size: 1.5em;
+  }
+
+  .closeIcon {
+    font-size: 1.8em;
+  }
+
+  .formGrid {
+    grid-template-columns: 1fr; /* Uma coluna em telas menores */
+  }
+
+  .formActions button {
+    width: 100%;
+    min-width: unset;
+  }
+}
+
+@media (max-width: 480px) {
+  .formContainer {
+    border-radius: 10px;
+  }
+  .formHeader {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+  }
+}

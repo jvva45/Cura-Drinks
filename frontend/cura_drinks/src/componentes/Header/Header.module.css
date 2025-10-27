@@ -1,0 +1,36 @@
+/* styles.header */
+
+.header {
+  display: grid; /* Usamos Grid ao invés de Flexbox no container principal */
+  grid-template-columns: 1fr auto 1fr; /* A MÁGICA ACONTECE AQUI */
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--cor-fundo-header);
+  border-bottom: 1px solid #ccc;
+  width: 100%; /* Garante que o header ocupe toda a largura */
+}
+.center {
+  grid-column: 2; /* Coloca este item na segunda coluna (a do meio) */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-self: center; /* Centraliza o próprio elemento na célula do grid */
+}
+
+.user {
+  grid-column: 3; /* Coloca este item na terceira coluna (a da direita) */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-self: end; /* Alinha o próprio elemento no final da célula do grid */
+}
+
+/* Estilos opcionais */
+.header h1 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.header svg {
+  font-size: 1.5rem;
+}

@@ -1,0 +1,35 @@
+.button {
+    background-color: blue;
+    color: white;
+    padding: 10px 16px;   /* altura e largura equilibradas */
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease;
+    line-height: 1.2;     /* evita botão "esticado" */
+}
+
+.button:hover {
+    background-color: #66C59B; 
+}
+
+/* Botão pequeno */
+.button-small {
+    padding: 6px 12px;    /* menor que o padrão */
+    font-size: 0.85rem;   /* fonte menor */
+    line-height: 1.1;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .button {
+        padding: 8px 14px;
+        font-size: 0.9rem;
+    }
+
+    .button-small {
+        padding: 5px 10px;
+        font-size: 0.8rem;
+    }
+}

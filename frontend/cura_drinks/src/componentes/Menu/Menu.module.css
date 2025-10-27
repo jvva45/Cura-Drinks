@@ -1,0 +1,71 @@
+/* Estilos para o container principal do Dashboard */
+.dashboardContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.dashboardMain {
+  display: flex;
+  flex-grow: 1;
+}
+
+/* Estilos para o Menu Lateral (Aside) */
+.menu {
+  width: 220px;
+  background-color: #0A66C2; /* Azul Principal da paleta */
+  min-height: calc(100vh - 60px); /* Altura total menos o header */
+  padding: 20px 10px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  color: #FFFFFF; /* Branco para o texto */
+}
+
+/* Efeito hover nos links do menu */
+.menu nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.15); /* Branco com 15% de opacidade, conforme guia */
+}
+
+/* Estilos para o botão de Logout */
+.logout {
+  margin-top: 30px;
+}
+
+.logout button {
+  width: 100%;
+  background-color: #D9534F; /* Vermelho Erro da paleta para ações destrutivas */
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* Efeito hover no botão de logout */
+.logout button:hover {
+  background-color: #C9302C; /* Um tom mais escuro do vermelho para o hover */
+}
+
+/* Container para o conteúdo (Outlet) */
+.outletContainer {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #F0F0F0; /* Cinza Suave para o fundo do conteúdo */
+}
+
+/* Design Responsivo para o Menu */
+@media (max-width: 768px) {
+  .menu {
+    position: fixed;
+    left: -240px;
+    top: 60px; /* Altura do header */
+    height: calc(100vh - 60px);
+    transition: left 0.3s ease;
+    z-index: 100;
+  }
+
+  .menu.active {
+    left: 0;
+  }
+}

@@ -1,0 +1,22 @@
+.dashboardContainer {
+  display: flex;
+  flex-direction: column; /* Header em cima, Main embaixo */
+  height: 100vh; /* ocupa tela inteira */
+}
+
+.dashboardMain {
+  display: flex;
+  flex: 1; /* ocupa o resto da tela */
+  overflow: hidden; /* evita barra de rolagem dupla */
+}
+
+.dashboardMain > :first-child {
+  flex-shrink: 0; /* o Menu não encolhe */
+}
+
+.outletContainer {
+  flex: 1; /* ocupa todo espaço à direita */
+  padding: 1rem;
+  overflow-y: auto; /* scroll apenas no conteúdo */
+  background-color: #f5f5f5; /* cor de fundo clara */
+}

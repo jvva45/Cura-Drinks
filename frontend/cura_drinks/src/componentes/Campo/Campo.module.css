@@ -1,0 +1,43 @@
+.fieldContainer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.fieldContainer input {
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Focus on input */
+.fieldContainer input:focus {
+    border-color: #4f46e5; /* blue */
+    box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+    outline: none;
+}
+
+
+.feedbackInput {
+  display: block;
+  width: 100%;
+  min-height: 80px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Responsive: smaller screens */
+@media (max-width: 600px) {
+    .fieldContainer input {
+        font-size: 0.95rem;
+        padding: 0.5rem 0.7rem;
+    }
+
+    .fieldContainer label {
+        font-size: 0.85rem;
+    }
+}

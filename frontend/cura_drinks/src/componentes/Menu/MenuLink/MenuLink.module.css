@@ -1,0 +1,48 @@
+/* MenuLink.module.css */
+
+.link {
+  /* --- Layout e Posição --- */
+  display: block;
+  padding: 12px 20px; /* Aumentei o padding esquerdo para dar espaço para a linha */
+  margin-bottom: 10px;
+  position: relative; /* Essencial para posicionar a linha-borda */
+
+  /* --- Texto e Fonte --- */
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #FFFFFF;
+
+  /* --- Animação --- */
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Efeito HOVER: um feedback sutil continua sendo uma boa prática */
+.link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+/* 
+  Estilo para o link ATIVO (página atual) 
+  Esta é a parte principal da mudança.
+*/
+.LinkHighlighted {
+  font-weight: 600; /* Deixa o texto um pouco mais forte para indicar atividade */
+  background-color: rgba(255, 255, 255, 0.05); /* Um fundo quase imperceptível para diferenciar */
+}
+
+/* A LINHA! Criada com um pseudo-elemento ::before */
+.LinkHighlighted::before {
+  content: ""; /* Pseudo-elementos precisam de 'content' */
+  position: absolute; /* Posiciona a linha em relação ao .link */
+  left: 0; /* Alinha no início do link */
+  top: 50%; /* Começa no meio vertical */
+  transform: translateY(-50%); /* Centraliza a linha perfeitamente na vertical */
+  
+  width: 4px; /* Largura da linha */
+  height: 60%; /* Altura da linha (não ocupa o espaço todo, fica mais elegante) */
+  
+  background-color: #FFFFFF; /* Cor da linha (branco) */
+  border-radius: 2px; /* Deixa as pontas da linha arredondadas */
+}

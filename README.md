@@ -4,9 +4,10 @@
 
 ## 📝 Visão Geral
 
-O **Cura-Drinks** é uma aplicação Full-Stack desenvolvida com o objetivo de [**Insira aqui o objetivo principal do projeto, ex: gerenciar receitas de drinks, controlar estoque de bebidas, ou ser um e-commerce de bebidas artesanais**].
+O **Cura-Drinks** é uma aplicação Full-Stack desenvolvida para auxiliar microempreendedores a **gerenciar produtos, categorias e unidades**, oferecendo uma forma prática de **gerar orçamentos precisos** com os custos corretos de cada item.  
+Com o sistema, é possível cadastrar produtos, organizar por categorias e unidades, e calcular automaticamente o **custo final de combinações**, como “drinks prontos” ou outros produtos compostos, facilitando o controle financeiro e a tomada de decisões.
 
-O projeto visa demonstrar uma arquitetura moderna e escalável, separando as responsabilidades de *backend* e *frontend* em um único repositório (*monorepo*).
+
 
 ## 🚀 Tecnologias Chave
 
